@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Collector</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rokkitt" rel="stylesheet">
+</head>
+
+<body>
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <div class="container">
+                <div class="row mb-3">
+                    <div class="col-md-12 title">
+                        <h1 id="titleBorder">Link's Nightmare</h1>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12 instruction borderImage">
+                        <!--instructions here, skin color background, green text-->
+                        <p>Link (you) has been transported to an alternate dimension! You have been tasked with the monumentous
+                            role of providing your paying customers with the correct
+                            change in rupees or you will be savagely attacked (it's a harsh world).
+                        </p>
+                        <p>There are 4 types of rupees below. Click on each with give you a certain number of rupees, 
+                            adding them to your rupee change count.
+                        </p>
+                        <p>You must match your change amount with target change amount to 
+                            satisfy your customer. If you go over, you lose a heart...from being beat up for your poor service.
+                        </p>
+                        <p>To make this extra fun (although not for Link), the value of each rupee is hidden at the beginning
+                            of each round, so you must click on them first to know what they're worth.</p>
+                        <p>Each time a round starts (new target value), the rupee amounts are randomized!
+                        </p>
+                        <p>Every customer you satisfy adds to your win count (and your customer trophy collection!)</p>
+                        <p>If you lose all 4 lives, it is game over and you must start over (click Restart button).</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 targetScoreBox borderImage">
+                        <!--target score here, green background, purple text-->
+                        <p>Target Change Amount:</p>
+                        <h2 class="targetScore">SCORE</h2>
+                    </div>
+                    <div class="col-md-6 scoreCounter borderImage">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!--Win counter-->
+                                <p>Customers Satisfied:
+                                    <span class="win-counter">0</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row win-icons">
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!--Loss counter-->
+                                <p>Damage Taken:
+                                    <span class="loss-counter">0</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img class="heart finalHeart" src="assets/images/heart.png" alt="final heart">
+                            </div>
+                            <div class="col-md-3">
+                                <img class="heart thirdHeart" src="assets/images/heart.png" alt="3rd heart">
+                            </div>
+                            <div class="col-md-3">
+                                <img class="heart secondHeart" src="assets/images/heart.png" alt="2nd heart">
+                            </div>
+                            <div class="col-md-3">
+                                <img class="heart firstHeart" src="assets/images/heart.png" alt="1st heart">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5 restart borderImage">
+                        <button id="resetButton" onclick="resetGame()">Restart</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 pl-0 pr-0">
+                        <!--red crystal-->
+                        <img class="img-crystal crystal1" src="assets/images/green_rupee.png" alt="green crystal" onclick="playRupee()">
+                    </div>
+                    <div class="col-md-3 col-sm-6 pl-0 pr-0">
+                        <!--blue crystal-->
+                        <img class="img-crystal crystal2" src="assets/images/blue_rupee.png" alt="blue crystal" onclick="playRupee()">>
+                    </div>
+                    <div class="col-md-3 col-sm-6 pl-0 pr-0">
+                        <!--yellow crystal-->
+                        <img class="img-crystal crystal3" src="assets/images/yellow_rupee.png" alt="yellow crystal" onclick="playRupee()">>
+                    </div>
+                    <div class="col-md-3 col-sm-6 pl-0 pr-0">
+                        <!--green crystal-->
+                        <img class="img-crystal crystal4" src="assets/images/red_rupee.png" alt="red crystal" onclick="playRupee()">>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7 yourScoreContainer borderImage">
+                        <!--total score text-->
+                        <p class="yourScoreText">The total change you've given is:</p>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-4 highScoreContainer borderImage">
+                        <p>Your high score is: <span id="highScore">0</span></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7 yourScoreContainer borderImage">
+                        <!--dynamic current score based on crystals clicked-->
+                        <p class="yourScoreNum">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="assets/images/secondBackground.png" alt="legend of zelda" class="loz">
+        </div>
+    </div>
+
+
+
+    <br>
+    <audio id="rupee" src="assets/sounds/WW_Get_Rupee.wav"></audio>
+    <audio id="win" src="assets/sounds/LOZ_Fanfare.wav"></audio>
+    <audio id="lose" src="assets/sounds/OOT_AdultLink_FallDown2.wav"></audio>
+    <audio id="gameOver" src="assets/sounds/gameOver.mp3"></audio>
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/javascript/game.js"></script>
+
+</html>

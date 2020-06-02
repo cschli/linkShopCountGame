@@ -1,0 +1,139 @@
+h1 {
+    color: rgb(193,166,53);
+    background-color: rgb(61,79,31);
+    display: inline;
+    font-family: 'Caveat', cursive;
+}
+
+#titleBorder {
+    border-style: solid;
+    border-width: 54px 51px 65px 47px;
+    -moz-border-image: url("../images/secondBackground.png") 54 51 65 47 round;
+    -webkit-border-image: url("../images/secondBackground.png") 54 51 65 47 round;
+    -o-border-image: url("../images/secondBackground.png") 54 51 65 47 round;
+    border-image: url("../images/secondBackground.png") 54 51 65 47 round;
+}
+
+.title {
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.container {
+    margin-left:20px;
+    
+}
+
+.img-crystal {
+    width: 120px;
+    margin-left: 0px;
+    border: 5px solid black;
+}
+
+.instruction {
+    color: rgb(193,166,53);
+    background-color: rgb(96,126,56);
+    margin: 10px 5px 5px 0px;
+    font-family: 'Rokkitt', serif;
+}
+
+.borderImage {
+    border-style: solid;
+    border-width: 17px;
+    -moz-border-image: url("../images/128-198.jpg") 27 repeat;
+    -webkit-border-image: url("../images/128-198.jpg") 27 repeat;
+    -o-border-image: url("../images/128-198.jpg") 27 repeat;
+    border-image: url("../images/128-198.jpg") 27 repeat;
+}
+
+body {
+    background-image: url("../images/background.jpg");
+}
+
+.loz {
+    margin-top: 20%;
+}
+
+.targetScoreBox {
+    background-color: rgb(96,126,56);
+    padding: 5px 30px 30px 5px;
+    margin: 5px 5px 5px 0px;
+    font-family: 'Rokkitt', serif;
+}
+
+.targetScore {
+    color: rgb(193,166,53);
+    font-family: 'Rokkitt', serif;
+}
+
+.scoreCounter {
+    background-color: rgb(96,126,56);
+    margin: 0px 0px 5px 0px;
+}
+
+.restart {
+    background-color: rgb(96,126,56);
+    margin: 0px 0px 5px 0px; 
+    display: flex;
+    font-family: 'Rokkitt', serif;
+}
+
+#resetButton {
+    position: relative;
+    margin: auto;
+    border: 2px solid rgb(193,166,53);
+    
+}
+
+.highScoreContainer {
+    background-color: rgb(96,126,56);
+    margin: 5px 0px 5px 0px; 
+    display: flex;
+}
+
+.yourScoreContainer {
+    background-color: rgb(96,126,56);
+    margin-top: 5px;
+}
+
+.yourScoreNum {
+    padding-bottom: 40px;
+}
+
+.heart {
+    width: 30px;
+    height: 30px;
+}
+
+.monsterImage {
+    max-width:30px;
+    max-height:30px;
+    width: auto;
+    height: auto;
+}
+
+p {
+    font-family: 'Rokkitt', serif;
+    font-size: 18px;
+}
+
+* {
+    color: rgb(193,166,53);
+}
+
+
+
+@media screen and (max-width: 980px) {
+    .img-crystal {
+        width: 100px;
+        margin-left: 0px;
+        border: 2px solid black;
+    }
+
+    .loz {
+        display: none;
+    }
+    .container {
+        margin: auto;
+    }
+}
